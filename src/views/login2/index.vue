@@ -112,20 +112,20 @@ export default {
                 // commit('SET_USERID', userInfo.userId)
                 // commit('SET_USERNAME', userInfo.userName)
                 // commit('SET_VERIFICATIONSTATUS', userInfo.verificationStatus)
-                if(this.form.username == 'admin' && this.form.password == '123456') {
-                    const objData = {
-                        currId: 1,
-                        roleId: 1,
-                        userId: 1,
-                        userName: 'admin',
-                        verificationStatus: 3
-                    }
-                    store.dispatch('user/setUserInfo',objData);
-                    console.log(this.$store)
-                    this.$message.success('登录成功');
-                    this.$router.replace({ name: 'Dashboard'});
-                    return
-                }
+                // if(this.form.username == 'admin' && this.form.password == '123456') {
+                //     const objData = {
+                //         currId: 1,
+                //         roleId: 1,
+                //         userId: 1,
+                //         userName: 'admin',
+                //         verificationStatus: 3
+                //     }
+                //     store.dispatch('user/setUserInfo',objData);
+                //     console.log(this.$store)
+                //     this.$message.success('登录成功');
+                //     this.$router.replace({ name: 'Dashboard'});
+                //     return
+                // }
                 const params = {
                     mobile: this.form.username,
                     password: Base64.encode(this.form.password)

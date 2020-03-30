@@ -24,7 +24,7 @@ export default {
   },
   data() {
     return {
-      title: '济工网',
+      title: '电子合同管理平台',
       logo: 'https://wpimg.wallstcn.com/69a1c46c-eb1c-4b46-8bd4-e9e686ef5251.png'
     }
   }

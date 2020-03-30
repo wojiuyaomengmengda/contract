@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: '济工网',
+  title: '电子合同管理平台',
 
   /**
    * @type {boolean} true | false
