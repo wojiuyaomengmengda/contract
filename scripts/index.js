@@ -107,7 +107,12 @@ module.exports = function httpApp(req, res) {
         }
         res.end(JSON.stringify(data));
       } else {
-        res.end('')
+        let data = {
+          code: 400,
+          data: [],
+          message: '失败'
+        }
+        res.end(JSON.stringify(data))
       }
       // res.send(`{}`)
       console.log(pathname, 'pathname');
