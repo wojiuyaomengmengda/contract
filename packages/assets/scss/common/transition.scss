@@ -1,0 +1,127 @@
+/* 页面切换动画
+------------------------------- */
+.slide-right-enter-active,
+.slide-right-leave-active,
+.slide-left-enter-active,
+.slide-left-leave-active {
+  will-change: transform;
+  transition: all 0.3s ease;
+}
+
+
+.slide-right-enter-from {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.slide-right-leave-to {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+
+.slide-left-enter-from {
+  @extend .slide-right-leave-to;
+}
+
+.slide-left-leave-to {
+  @extend .slide-right-enter-from;
+}
+
+.opacitys-enter-active,
+.opacitys-leave-active {
+  will-change: transform;
+  transition: all 0.3s ease;
+}
+
+.opacitys-enter-from,
+.opacitys-leave-to {
+  opacity: 0;
+}
+
+/* logo 过渡动画
+------------------------------- */
+@keyframes logoAnimation {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 404、401 过渡动画
+------------------------------- */
+@keyframes error-num {
+  0% {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes error-img {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/* bi-slide
+------------------------- */
+.bi-slide-right-enter-active,
+.bi-slide-right-leave-active,
+.bi-slide-left-enter-active,
+.bi-slide-left-leave-active,
+.bi-slide-top-enter-active,
+.bi-slide-top-leave-active,
+.bi-slide-bottom-enter-active,
+.bi-slide-bottom-leave-active {
+  will-change: transform;
+  transition: all 0.6s ease;
+}
+
+.bi-slide-right-enter-from,
+.bi-slide-right-leave-to {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.bi-slide-left-enter-from,
+.bi-slide-left-leave-to {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.bi-slide-top-enter-from,
+.bi-slide-top-leave-to {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.bi-slide-bottom-enter-from,
+.bi-slide-bottom-leave-to {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+/* bi-fade
+------------------------- */
+.bi-fade-enter-active,
+.bi-fade-leave-active {
+  transition: opacity 0.6s ease;
+}
+
+.bi-fade-enter-from,
+.bi-fade-leave-to {
+  opacity: 0;
+}

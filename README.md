@@ -1,91 +1,58 @@
-# vue-admin-template
+# csmart-public-business开发文档
+背景说明
 
-English | [简体中文](./README-zh.md)
+## 样式
+全局变量可在 global.less (@arco-design/web-vue/es/style/theme/global.less)
+`node_modules\@arco-design\web-vue\dist\arco.css`
 
-> A minimal vue admin template with Element UI & axios & iconfont & permission control & lint
-
-**Live demo:** http://panjiachen.github.io/vue-admin-template
+## 国际化
 
 
-**The current version is `v4.0+` build on `vue-cli`. If you want to use the old version , you can switch branch to [tag/3.11.0](https://github.com/PanJiaChen/vue-admin-template/tree/tag/3.11.0), it does not rely on `vue-cli`**
-
-## Build Setup
-
+## 开发与构建
 
 ```bash
-# clone the project
-git clone https://github.com/PanJiaChen/vue-admin-template.git
+# 本地开发
+npm run docs:dev
 
-# enter the project directory
-cd vue-admin-template
+# 文档打包构建
+npm run docs:build
 
-# install dependency
-npm install
+# 组件库打包
+npm run build-only
+npm run build-only:px2rem # 主要打包出`lib-px2rem\style.css`(px转rem的样式), rem方案会用到
 
-# develop
+# 组件库在业务侧调试，使用`npm link`方式
+
+# 组件库发包
+# 1、执行`npm run build-only:all`
+# 2、package.json的version需要+1
+# 3、npm publish // 需要设置npm源，登录阿里云效账号后操作
+# 4、本地打tag,例：`git tag -a v1.0.5 -m "新增chart图表组件7个"`
+# 5、将tag推向远程仓库，例： `git push origin v1.0.5`
+# 6、记得将改动合回`docs-dev`分支
+```
+
+## 如何封装`csmart-public-business`
+以button为例
+
+组件封装
+1、在`packages/`新增组件，做组件封装;并在`index.ts`注册组件。
+2、在`packages/assets/scss/`下新增组件样式
+- `theme/scss/theme/normal/theme.css` 默认组题样式（覆盖arco组件的CSS变量或自定义CSS变量）
+
+
+## 导航栏开发
+
+```bash
+# 本地开发
 npm run dev
+
 ```
+![设置sessionStorage数据](./docs/images/nav-dev.png)
 
-This will automatically open http://localhost:9528
 
-## Build
+## 项目目录说明
 
-```bash
-# build for test environment
-npm run build:stage
 
-# build for production environment
-npm run build:prod
-```
-
-## Advanced
-
-```bash
-# preview the release environment effect
-npm run preview
-
-# preview the release environment effect + static resource analysis
-npm run preview -- --report
-
-# code format check
-npm run lint
-
-# code format check and auto fix
-npm run lint -- --fix
-```
-
-Refer to [Documentation](https://panjiachen.github.io/vue-element-admin-site/guide/essentials/deploy.html) for more information
-
-## Demo
-
-![demo](https://github.com/PanJiaChen/PanJiaChen.github.io/blob/master/images/demo.gif)
-
-## Extra
-
-If you want router permission && generate menu by user roles , you can use this branch [permission-control](https://github.com/PanJiaChen/vue-admin-template/tree/permission-control)
-
-For `typescript` version, you can use [vue-typescript-admin-template](https://github.com/Armour/vue-typescript-admin-template) (Credits: [@Armour](https://github.com/Armour))
-
-## Related Project
-
-- [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
-
-- [electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin)
-
-- [vue-typescript-admin-template](https://github.com/Armour/vue-typescript-admin-template)
-
-- [awesome-project](https://github.com/PanJiaChen/vue-element-admin/issues/2312)
-
-## Browsers support
-
-Modern browsers and Internet Explorer 10+.
-
-| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari |
-| --------- | --------- | --------- | --------- |
-| IE10, IE11, Edge| last 2 versions| last 2 versions| last 2 versions
-
-## License
-
-[MIT](https://github.com/PanJiaChen/vue-admin-template/blob/master/LICENSE) license.
-
-Copyright (c) 2017-present PanJiaChen
+## 其他参考
+[使用 VitePress 搭建及部署 vue 组件库文档](https://zhuanlan.zhihu.com/p/696928556)

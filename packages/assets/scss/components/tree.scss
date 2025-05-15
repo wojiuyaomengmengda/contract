@@ -1,0 +1,89 @@
+.busine-tree {
+  .arco-tree-node {
+    padding-right: 16px;
+    color: var(--color-black);
+    border: 1px solid transparent;
+    border-radius: var(--border-radius-medium);
+
+    &:hover {
+      background-color: var(--color-primary-light-1);
+    }
+  }
+  .arco-tree-node-selected .arco-tree-node-title, 
+  .arco-tree-node-selected .arco-tree-node-title:hover {
+    color: var(--color-black);
+  }
+  .arco-tree-node-title:hover {
+    background-color: transparent;
+  }
+  .arco-tree-node-expanded[data-level="0"] {
+    background-color: var(--color-fill-1);
+  }
+  .arco-tree-node[data-level="0"] {
+    .arco-tree-node-title {
+      padding: 12px 4px;
+      line-height: 22px;
+    }
+  }
+  .arco-tree-node .arco-tree-node-title {
+    padding: 10px 4px;
+    line-height: 20px;
+  }
+  .arco-icon-hover {
+    color: var(--color-text-3);
+    .arco-icon {
+      width: 1.2em;
+      height: 1.2em;
+    }
+  }
+  .arco-icon-hover:hover::before {
+    background-color: transparent;
+  }
+}
+
+
+// 场景样式sence1（org/index.html用到）
+.busine-tree.busine-tree--sence1 {
+  [data-level="0"] {
+      background-color: unset;
+  
+      .arco-tree-node-title {
+          font-size: 16px;
+      }
+  }
+  [data-level="1"],
+  [data-level="2"],
+  [data-level="3"] {
+  
+    .arco-tree-node-title {
+        font-size: 14px;
+    }
+  }
+
+  .arco-tree-node-selected {
+      background-color: unset;
+      border-color: transparent;
+
+      .arco-tree-node-title,
+      .arco-icon-hover {
+          color: rgb(var(--primary-6));
+      }
+  }
+
+  .arco-tree-node {
+      &:hover,
+      &-title:hover {
+          color: rgb(var(--primary-6));
+      }
+
+      &:hover {
+          background-color: var(--color-primary-light-1);;
+      }
+
+      &:hover {
+          .arco-icon-hover {
+              color: rgb(var(--primary-6));
+          }
+      }
+  }
+}

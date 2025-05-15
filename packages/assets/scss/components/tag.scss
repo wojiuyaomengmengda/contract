@@ -1,0 +1,9 @@
+.alarm-tag {
+  &-type-text.arco-tag-checked {
+    background-color: transparent !important;
+  }
+  .arco-tag-icon {
+    width: 14px;
+    flex-shrink: 1;
+  }
+}

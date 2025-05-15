@@ -1,0 +1,26 @@
+.business-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .arco-avatar {
+    width: 100%;
+    height: 100%;
+  }
+  &.avatar-size-xs {
+    width: var(--pc-avatar-size-xs);
+    height: var(--pc-avatar-size-xs);
+  }
+  &.avatar-size-large {
+    width: var(--pc-avatar-size-large);
+    height: var(--pc-avatar-size-large);
+  }
+  &.avatar-type-icon {
+    .arco-avatar {
+      .arco-avatar-image {
+        width: 50%;
+        height: 50%;
+        margin: 0 auto;
+      }
+    }
+  }
+}

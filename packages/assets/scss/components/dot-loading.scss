@@ -1,0 +1,44 @@
+/* 定义动画的关键帧 */
+@keyframes business-dot-loading-animation {
+    0%, 100% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1);
+    }
+}
+
+/* 应用动画到三个点的容器 */
+.business-dot-loading {
+    display: flex;
+    align-items: center;
+    width: 50px;
+
+    &-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+}
+
+.business-dot-loading::before,
+.business-dot-loading::after,
+.business-dot-loading span {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-fill-4);
+    border-radius: 50%;
+    margin: 0 2px;
+    animation: business-dot-loading-animation 1s infinite ease-in-out;
+}
+
+.business-dot-loading::before {
+    animation-delay: -0.32s; /* 使第一个点的动画延迟 */
+}
+
+.business-dot-loading::after {
+    animation-delay: -0.16s; /* 使第二个点的动画延迟 */
+}
