@@ -1,0 +1,41 @@
+.business-icon {
+  display: inline-block;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &.icon-menu {
+    height: 20px;
+    width: 20px;
+    background-image: url(@/assets/images/menu.png);
+
+    &.icon-menu_opened {
+      background-image: url(@/assets/images/menu-active.png);
+    }
+  }
+
+  &.icon-workcenter {
+    width: 24px;
+    height: 24px;
+    background-image: url(@/assets/images/gongzuotai.png);
+  }
+
+  &.icon-alarm {
+    width: 24px;
+    height: 24px;
+    background-image: url(@/assets/images/jingbao.png);
+  }
+
+  &.icon-ai {
+    width: 24px;
+    height: 24px;
+    background-image: url(@/assets/images/ai.png);
+  }
+
+  &.icon-close {
+    width: 24px;
+    height: 24px;
+    background-image: url(@/assets/images/close.png);
+  }
+}

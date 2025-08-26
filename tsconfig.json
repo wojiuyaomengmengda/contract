@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es2020",
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "ignoreDeprecations": "5.0",
+    "suppressImplicitAnyIndexErrors": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["packages/*"],
+      "types/*": ["types/*"],
+      "api/*": ["api/*"]
+    },
+    "lib": ["es2020", "dom"],
+    "allowJs": true
+  },
+  "include": ["packages/**/*", "packages/**/*.vue", "env.d.ts", "packages/*.d.ts", "types"],
+  "exclude": ["node_modules", "packages/assets"]
+}

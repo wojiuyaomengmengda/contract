@@ -1,0 +1,78 @@
+.business-tabs {
+  .arco-tabs-tab-title {
+    .arco-icon,
+    .bi-icon {
+      margin-right: 6px;
+    }
+  }
+  .arco-tabs-nav-tab-list {
+    padding: 4px;
+  }
+  .arco-tabs-nav-size-small {
+    .arco-tabs-tab {
+      line-height: 28px;
+      padding: 0 8px;
+    }
+  }
+  
+  // line 类型
+  .arco-tabs-nav-type-line {
+    &::before {
+      // width: 0;
+      background-color: var(--color-border-3);
+    }
+    .arco-tabs-nav-tab-list {
+      padding: 3px 4px;
+      position: relative;
+      &::before {
+        position: absolute;
+        right: 4px;
+        left: 4px;
+        bottom: 0;
+        display: block;
+        clear: both;
+        height: 1px;
+        background-color: var(--color-border-3);
+        content: '';
+      }
+    }
+    .arco-tabs-tab {
+      margin: 0;
+      color: var(--color-text-1);
+      &:hover,
+      &.arco-tabs-tab-active, 
+      &.arco-tabs-tab-active:hover {
+        color: rgb(var(--primary-6));
+      }
+      &:hover .arco-tabs-tab-title::before{
+        background-color: transparent;
+      }
+      &.arco-tabs-tab-disabled, 
+      &.arco-tabs-tab-disabled:hover {
+        color: var(--color-text-4);
+      }
+    }
+  }
+}
+
+.business-tabs--sence1.arco-tabs-type-line {
+  .arco-tabs-tab {
+    margin: 0;
+    .arco-tabs-tab-title {
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &.arco-tabs-tab-active,
+    &:hover  { 
+      .arco-tabs-tab-title::before {
+        background-color: transparent;
+      }
+      .alarm-number,
+      .arco-tabs-tab-title {
+        color: rgb(var(--primary-6));
+      }
+    }
+  }
+}
